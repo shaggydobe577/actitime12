@@ -1,0 +1,255 @@
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.amazon.in/your-account");
+      driver.get("https://demo.actitime.com/login.do");
+      Thread.sleep(2000);
+      driver.navigate().back();
+      Thread.sleep(2000);
+      driver.navigate().forward();
+      Thread.sleep(2000);
+      driver.navigate().refresh();
+	}
+
+}
+   
+
+
+gettitle method
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://demo.actitime.com/login.do");
+		String actualtitle = driver.getTitle();
+		System.out.println(actualtitle);
+		
+		
+	
+	}
+
+}
+
+
+grtcurrenturl
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.flipkart.com/");
+		String actualtitle = driver.getCurrentUrl();
+		System.out.println(actualtitle);
+		
+		
+		
+		
+	
+	}
+
+}
+getpage sourse it is noting but html stracture
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.flipkart.com/");
+		String code = driver.getPageSource();
+		
+		System.out.println(code);
+		
+		
+		
+	
+	}
+
+
+manage method
+ 
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		//driver.manage().window().maximize();
+		//driver.manage().window().minimize();
+		driver.manage().window().fullscreen();
+		driver.get("https://demo.actitime.com/login.do");
+		
+	
+	}
+
+}
+
+}
+
+getsize  return type is dimension
+width is first
+
+package Basic;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+	
+		driver.get("https://demo.actitime.com/login.do");
+	Dimension ele = driver.manage().window().getSize();
+		
+	System.out.println("width="+ ele.getHeight());
+	System.out.println("height="+ele.getHeight());
+		
+	
+	}
+
+}
+setsize
+
+package Basic;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+	
+		driver.get("https://demo.actitime.com/login.do");
+		Dimension d =new  Dimension(500,800);
+	driver.manage().window().setSize(d);
+	}
+
+}
+
+with equals
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test5 {
+	public static void main(String[]args) {
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://demo.actitime.com/login.do");
+	
+		
+	 String actualpagesourse = driver.getPageSource();
+	 System.out.print(actualpagesourse);
+	 String expectedpagesourse = "Please identify yourself";
+		
+	 
+	 if (actualpagesourse .equals(expectedpagesourse)) {
+		 
+		 System.out.println("True");
+	}
+	 else {
+		 System.out.println("False");
+	}
+
+	}
+}
+	
+	
+	
+	with contain method
+
+package Basic;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test5 {
+	public static void main(String[]args) {
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://demo.actitime.com/login.do");
+	
+		
+	 String actualpagesourse = driver.getPageSource();
+	 System.out.print(actualpagesourse);
+	 String expectedpagesourse = "Please identify yourself";
+		
+	 
+	 if (actualpagesourse .contains(expectedpagesourse)) {
+		 
+		 System.out.println("True");
+	}
+	 else {
+		 System.out.println("False");
+	}
+
+	}
+}
+	
+	
+set posiction method 
+
+package Basic;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test01 {
+	public static void main(String[]args)
+	{
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.youtube.com/");
+		Point pt=new Point(300,230);
+		
+		driver.manage().window().setPosition(pt);
+		
+	}
+
+}
+
+	
+	
+	
+	
+	
+
+
+
+
+
